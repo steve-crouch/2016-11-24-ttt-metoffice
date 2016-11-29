@@ -1,12 +1,1129 @@
-Welcome to Software Carpentry
+*Welcome to Software and Data Carpentry Etherpad! http://bit.ly/ITMet2016
 
-We will use this Etherpad to share links and snippets of code, take notes, ask and answer questions, and whatever else comes to mind.
-The page displays a screen with three major parts:
+This pad is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents.
 
-* The left side holds today's notes: please edit these as we go along.
-* The top right side shows the names of users who are logged in: please add your name and pick the color that best reflects your mood and personality.
-* The bottom right is a real time chat window for asking questions of the instructor and your fellow learners.
+Use of this service is restricted to members of the Software Carpentry and Data Carpentry community; this is not for general purpose use (for that, try etherpad.wikimedia.org).
 
-To start, please add yourself to the attendee list below:
+Users are expected to follow our code of conduct: http://software-carpentry.org/conduct.html
 
-* Instructor (discipline, institution)
+All content is publicly available under the Creative Commons Attribution License: https://creativecommons.org/licenses/by/4.0/
+
+Minute card feedback from both days: https://docs.google.com/document/d/1l61ZxkwjRG70GgLKUPJcu4-RpZdJnUKqhp-Vc1Rd6DA/edit#
+
+Links
+	* Feedback survey for course: http://bit.ly/ITMet2016Survey
+	* Met Office instructor training page: https://steve-crouch.github.io/2016-11-24-ttt-metoffice/
+	* Instructor Training material http://swcarpentry.github.io/instructor-training/
+	* Who we are: http://software-carpentry.org/pages/team.html
+	* Where we've been: http://software-carpentry.org/workshops/previous.html
+	* Our lessons: http://www.datacarpentry.org/lessons/ and http://software-carpentry.org/lessons.html
+	* What we've learned: http://swcarpentry.github.io/slideshows/lessons-learned/index.html
+	* Creating a website for a workshop: https://github.com/swcarpentry/workshop-template
+	* Joining mailing lists: http://software-carpentry.org/pages/join.html
+
+Attendance list (for the workshop) - your name, affiliation, and GitHub and Twitter handle, if you have them:
+	* Steve Crouch, Software Sustainability Institute, steve-crouch
+	* Corinne Bosley, Met Office  (github: corinnebosley, email: corinne.bosley@metoffice.gov.uk)
+	* Daniel Kirkham, Met Office, daniel.kirkham@metoffice.gov.uk, djkirkham@github
+	* Mark Hedley, Met Office, marqh @ github
+	* Matthew Mizielinski, Met Office (github: matthew-mizielinski, e-mail: matthew.mizielinski@metoffice.govuk)
+	* Stephen Haddad, Met Office (stephen.haddad@metoffice.gov.uk stevehadd@github @stevehadd)
+	* Hamish Steptoe (hamish.steptoe@metoffice.gov.uk, github: katabat)
+	* Peter Killick, Met Office (peter.killick@metoffice.gov.uk; github - @dkillick; Twitter - @_DPeterK_)
+	* Tommaso Benacchio, Met Office, tommaso,benacchio@metoffice.gov.uk, Twitter @tbenacch
+	* Bill Little, Met Office (bill.little@metoffice.gov.uk, bjlittle@github)
+	* Saeed Sadri (saeed.sadri@metoffice.gov.uk, balazagi@github)
+	* Thomas Voigt, Met Office,  tv3141
+	* Alan J Hewitt, Met office, alan.j.hewitt@metoffice.gov.uk
+	* Catherine Bradshaw (catherine.bradshaw@metoffice.gov.uk)
+	* Laura Dreyer (laura.dreyer@metoffice.gov.uk, github: lbdreyer)
+	* Steve Callaghan steven.callaghan@metoffice.gov.uk
+	* Deborah Miles, Met Office (deborah.miles@metoffice.gov.uk)
+	* Simon.tucker@metoffice.gov.uk
+
+Multiple Choice Questions
+
+Saeed:
+What would the output of the 'ls t*' command in a linux shell would be if the content of the folder were files named after the days of the week
+e.g. monday, tuesday, wednesday,et.c
+a)Turesday, Thursday (assuming command is not case sensative)
+b) tuesday, thursday (correct answer)
+c) tuesday (assuming command is not recursive)
+d) t* (not undrestanding what the command is meant to do)
+
+Which git command would you use to describe your changes to a file?
+	a) git status                (shows which files have changed)
+	b) git log                     (shows the messages from previous commits)
+	c) git diff                     (shows the differences between previous commits)
+	d) git commit  -m      (correct)
+Simon. Q  What command would you use to copy a directory?
+a) cp  orig_dir new_dir    #wont work as it is a directory and needs the r
+b) mv orig_dir new_dir    #wrong command.   will move rather than copy
+c cp -r orig_dir new_dir    
+
+
+Steve and Debs:
+    Q.  Look at the diagram below. What is the direciton of  the geostrophic wind?
+    L  __________________________
+        __________________________
+        __________________________
+   H
+    
+    a.  Westerly   (correct)
+    b.  Southerly   (has given the direction of presure gradient force)
+    c.  Easterly  (Coriolis force applied in wrong direction)
+    d.  South-westerly  (Have included friction - misunderstood concept of geostophic balance)
+    
+    Corinne's MCQ regarding Repeating Actions with Loops:
+        
+        Suppose I write this 'for' loop:
+            
+            things = [1, 2, 3, 4]
+            for i in things:
+                print i
+                
+        What will my output look like?
+	  a) [1, 2, 3, 4]               Answer implies that 'i' means the whole list 
+        b) [i, i, i, i]                    Answer implies that the loop is turning the list into a list containing 'i's
+        c) 1
+            2
+            3
+            4                              Correct answer
+        d) i
+            i
+            i
+            i                              Answer implies that process loops over every element (which is correct) and returns 'i' for each element (which is not)
+    
+    
+    Bill - All alone at the back *sob* (awww)
+    [shell] How would you delete the populated directory "delme" ?
+    
+    a) rm -rf delme                                             [Assume this is correct,
+                                                                            discuss "-f" flag usage]
+                                                                            
+    b) rmdir delme                                             [Using "rmdir" command,
+                                                                            but the directory is not empty]
+                                                                            
+    c) cd delme; rm *; cd ..; rmdir delme        [Don't know of "-r" flag to "rm" command,
+                                                                            the "delme" dir may have sub-dirs]
+                                                                            
+    d) rm delme                                                  [Can't delete a directory (even an empty one) 
+*                                                                             with a bare "rm" command]
+    
+
+Tommaso and Matt:
+    
+Consider the following python code
+"""    
+*result = 1
+*for i in range(1,4):
+*    result *= i
+*
+*print result        
+"""
+
+What value would you expect to be printed?
+
+a) 24 -- misunderstanding of steps in loop/ how range works
+b) 4 -- misunderstanding of how range ends and how *= operator works
+c) 6
+d) 3 -- understaning of range, but misunderstanding of *=
+
+Catherine and Laura:
+Which git command would you use to permanently add your file changes to the tracked repo history?
+a) git add file.txt
+b) git commit
+c) git add -m "Added melon flavour option."
+d) git save
+
+Stephen and Alan
+What will be the output? (Python - repeating actions with loops)
+word=cloud
+for c in word:
+	print (c)
+print '!'
+
+a) - misunderstanding of what is in the loop
+
+c!
+l!
+o!
+u!
+d!
+
+b) - misunderstanding of variables or loop
+
+c
+c
+c
+c
+c
+
+c) - correct answer
+
+c
+l
+o
+u
+d
+!
+
+d) misunderstand of command or output
+
+print c
+print l
+print o
+print u
+print d
+print '!'
+	
+
+# what do i want somebody to know?
+# how might somebody has misunderstood this?
+## that there are multiple assert statements available
+## within unittest.TestCase
+class Test(unittest.TestCase):
+    #1.
+    def test_a_equals_b_1(self, a, b):
+        if a == b:
+            return True
+        else:
+            return False
+    #2.
+    def test_a_equals_b_3(self, a, b):
+        self.assertEqual(a, b)
+    #3.
+    def test_a_equals_b_3(self, a, b):
+        assert(a == b)
+
+
+
+
+Pete and Mark:
+Which of the following is a good commit message?
+  (a) Update                                                                         # Too terse, need to see the value of a descriptive message 
+  (b) Fix typo on line 2                                                        # Good, but the line number might change - focus on what to describe
+  (c) Lorem dolor ipsom became lorem dolor ipsum   # Too verbose, need to understand short can be descriptive
+  (d) Fixed typo in comment                                             # The best solution, things are looking good
+
+This might work well as a pre-emptive question.
+
+
+ 
+Thomas
+Using git:   
+Situation: 
+    - Edit file foo.bar
+    - git add foo.bar
+    - edit file foo.bar again
+
+Which changes will be commited?
+1) Only change set 1.   (correct)
+2) Both change sets combined.  (no, only staged changes)
+3) Only non-conflicting differences between the two change sets. (no, uncommited changes cannot conflict)
+4) None if changes contain conflicts. (no, uncommited changes cannot conflict)
+
+
+Dan
+Consider the following table Results containing some students' exam results:
+    
+Id    Name    Score
+1     Steve   83
+2     Barbara 72
+3     John    55
+4     Kelly   91
+5     Ruby    67
+
+What would be the result of the following query?
+
+SELECT Name
+FROM Results
+WHERE Score > 70 AND Name in ('Steve', 'Kelly', 'John')
+
+a) Steve      (Assuming each AND clause applies separately)
+     Barbara
+     John
+     Kelly
+
+b) Steve (Correct Answer)
+     Kelly
+
+c) Steve  (Only considering second clause)
+     John
+     Kelly
+
+d) Steve      (Only considering first clause)
+     Barbara
+     Kelly
+
+
+Bad Teaching Feedback
+
+- no introduction
+- objectives not clear
+- poor visibility of the screen
+- distraction to other events in the middle
+- no pause for assessment
+- 
+
+Positive:
+Spoke with enough volume
+
+Negative:
+    Everything else!
+
+
+* Lack of context (what was goal of lesson?)
+* Flustered delivery
+* criticising students
+* wildly varying content level
+Talking to laptop rather than class
+Lots of empty conversation but dropping in terms that were unfamiliar "polymorphic"
+No introduction - sit down
+Stuttering made hard to understand
+Patronising - Even excel users could understand
+Didnt explain what a function is
+Talking too fast
+Talking to screens (proj & laptop) not the audience
+Not planned - winging it - leading to making mistakes and rambling
+No learning objectives
+Introducing concepts and complex terms without introduction/explanation
+Making assumptions of skill level
+Distracted
+No interactions
++ started  by recapping previous work
+ - "Story arc" was very vague -- jumping around 
+ - lots of technical language with out clear reference to other materials
+ -  quote: "this is really simple stuff" impies that if you don't understand this you are stupid
+ - 
+Looked at phone
+- "Trust me"
+Made a mistake, and didn't explain why it was wrong
+- Poor start, not everyone was ready
+-Said 'don't worry about that' several times, so why was it in the session?
+-Turned his back to the learners
+
++Liked his 'natural-ness'
++Liked that he admitted he'd made a mistake
+
+rambled     very confusing to anyone new to the subject
+
+
++ : 
+    Recap at the start
+
+-:
+   Not interactive,
+   Rushing, 
+   Going through concepts without explanation
+   Did not take possible issues into account when preparing
+   
+Content:
+    Functions
+    Functors
+    
+Presentation
+   Talking to the screen
+   Pseudo-live 
+
+Teaching as a performance art:
+    
+Split into groups of three.
+Have each person introduce themselves, then within 90 seconds (only!) explain key ideas from Carpentry lesson episode they chose before start of courseto another person in group whilst third person records it (video and audio) using cell phoneor similar device.
+Rotate roles when finished.
+When all complete, watch all videos as group. Everyone gives feedback on all three videos (including yourself!)
+Place feedback on yourself here in the Etherpad - positive as well as things to improve
+
+
+Feedback: Tom
+	* Body language - hands distracted and fiddling
+	* Give a relevant introduction - starting by explaining a problem to be solved rather than jumping straight in
+Feedback: Bill
+	* Project voice - speak more audibly
+	* Be positive about course materials!
+	* Body language - the hands thing, not making eye contact
+	* Filled the time well!
+Feedback: Pete
+	* Voice projected, animated
+	* Concrete teaching points, message put across
+	* Use an iterative approach: introduce the things and then expand on them. What are we going to do today?
+	* Talked into a corner - have a clear, simple understanding of what needs to be put across
+
+Feedback for Corinne's Squad (The Drizzle Squad)
+	1. Feedback for Saeed:
++ Clear objective (gave a structure to begin with - student knew what to expect)
+- Presumptions of prior knowledge (use of potentially unfamiliar terminology)
+- Low volume of voice
+2. Feedback for Dan
++ Clear voice
++ Returned to use of simple terminology (columns and rows etc) to explain concepts
+- Lack of introduction to SQL
+- No examples of syntax
+3. Feedback for Corinne:
++ Clear voice
++ Relaxed style (some may say)
+- Forgot words
+- Presumed prior knowledge of terminology
+
+
+Feedback: Hamish, Catherine & Laura
+
++ve
+	* Didn't overwhelm the learner with new information
+	* Very clear - using clear steps to achieve and outcome similar to the tutorial model
+	* Introduced the learning outcomes at the beginning
+	* Lots of eye contact with learners - makes them more engaged
+	* Appropriate use of (not big) hand gestures - more engaging
+	* Appropriate repetition reinforces key concepts eg. 3 step, summary of 3 steps, detailed description of 3 steps
+
+-ve
+
+	* Avoid use of terminology not yet introduced to learners
+	* Variable pace of delivery can be difficult to follow - don't rattle through aspects you know well
+	* Too many hand gestures can be distracting
+	* Big hands can be distracting (dependent of the skill of the camera operator!)
+	* Very important to plan and practice  beforehand
+	* Difficult to keep to time (always less available than needed)
+
+
+
+Feedback for Stephen, Alan and Simon
+Stephen
+* be careful not use jargon without introduction
+* good pacing
+* good flow
+Alan 
+* important to know what you're going say before you say it
+* clear delivery
+* good explanation of why you'd want to use a loop
+* perhaps clearer explanation of what
+Simon
+* don't try to say too much in a short time
+* be clear what you want to explain
+* good context for what the commands do and hwo they fit together
+* reassured learners
+* pausing good, but not too much
+
+
+Matt, Mark & Tommaso
+ * good discussion of motivation for doing the work
+ * good to talk around the background of the speaker -- give confidence that trainer understands the subject
+ * good to give a summary of whats next  as a wrap up to the introduction (describe story arc/trajectory)
+ * How long is 90 seconds? when speaking it is easy to experience time dilation
+ * pauses can be used well, to control nerves and to allow ideas to be digested
+ * preparation key to nerves/confidence
+ * careful of how much detail to present -- repetition is useful for reinforcement, but not too much movement around the central method
+
+Afternoon of Day 1
+
+Please have a look at http://third-bit.com/science-center-concept-map.jpg
+
+The expert blind spot;  an expert may be able to jump various steps that a novice may need to make.
+Teaching practice needs to take (some?) of these steps.
+Teaching needs to focus on both information and the connections between the pieces (see concept map)
+7+-2: number of pieces of information someone can hold at once in short term / working memory
+concept maps can show you how much you are trying to teach (at once) -- to make best progress separate into smaller, consumable, sections and deal with separately
+
+Please check out http://swcarpentry.github.io/instructor-training/08-memory/
+
+concept maps can be effective if delivery is synchronised with the display/construction of the concept map (requires dicipine)
+can be an effective feedback mechanism -- students can indicate what they have picked up, and by omission what they have not.
+
+When you're done, please say so in the chat area in the lower right - thanks
+
+"90% of the time, magic consists of knowing one more thing than other people." - Pratchett
+
+
+https://docs.google.com/document/d/1F-zd3Xf3M69MhLmEZ3IM5Shpqc-IGTu13JfFNcP5XI/
+
+The more time/effort spent on a concept map (more polished), the less likely someone is to criticise this. A quick sketch is cheap, so feedback is likely to be more honest.
+
+
+
+GUI Bloopers: https://www.amazon.com/GUI-Bloopers-2-0-Second-Technologies/dp/0123706432/
+Designing with the Mind in Mind: https://www.amazon.com/Designing-Mind-Second-Understanding-Guidelines/dp/0124079148/
+
+Practice Teaching:
+
+	1. Same groups as this morning
+	1. Video recorded
+	1. Give feedback on two axes: content vs. presentation and better vs. worse (compared to this morning) rather than absolute positive vs. negative
+	1. Everyone gives feedback on everyone in the group (i.e., you give feedback on yourself as well as getting feedback from others)
+	1. Please add a sentence or two about whether working through the idea with a concept map helped, did nothing, or got in the way
+	1. Re-start at 15:00 UK time
+
+
+Bill, Tom and Pete
+
+Tom:
+	* Better/worse: better - more relaxed, less nervous, took time in speaking, said better
+	* Content and presentation - content was better, was easier to present the content; made simpler through having the links in place. Said everything that was wanted. Content was coherent this time
+	* Did it help? -- Yes, the structure and coherence were much helped.
+Bill:
+	* Better/worse: better - even posture and body language improved. Much better structured. Made the presentation very concise.
+	* Content and presentation: having the concept map in head allowed everything to flow. No pauses between concepts - a much better flow to the spoken content.
+	* Did it help? -- Helped a lot. Forcing one to work through what needs to be said.
+Pete:
+	* Better/worse: better - homework meant a more detailed introduction. More confidence and engagement
+	* Content and presentation: better narrative
+	* Did it help? -- not completely through overrunning and trying to fit too much in. Made the presentation more assured though - knew what needed to be said much better
+
+
+The Drizzle Squad
+1. Saeed:
++ Explanations much clearer
++ Terminology was explained 
++ More confidence
+- Kept looking at concept map
+= Was much better (concept map helped)
+2. Corinne:
+- Less natural
+- More rambly
+- More repetition
+- Did not even get to explanation of for loops (spent too much time explaining terminology)
+= Was much worse (concept map threw me off my groove)
+3. Dan:
++ Clearer description of what SQL is used for
+- Less natural
+- More repetition re-stating concepts
+= Was a bit better (concept map helped)
+
+Alan, Simon, Stephen
+
+Alan:
+	* Presentation was better - probably a result of knowing what I was going to say in advance rather than on the hoof
+	* Content was better - I think createing the conseptual map helped determine what where the main points i needed to make
+	* 
+Simon
+	* Presentation slightly better - less long pauses.  
+	*  Content better.  concept note helped
+Stephen
+	* Felt more confident I had covered the areas I wanted cover, helped keep content straight in my mind while presenting
+	* Still a bit fast spoken
+
+
+Matt, Mark, Tommaso
+
+Content: 
+    better:
+        Clearer structure with better connections
+        much clearer context
+    worse:
+        temptation to include more content (with better understanding gained)
+Presentation:
+    better:
+        clearer speech with more consistent pace
+        focussed on what can users will take away from the lessn
+    worse:
+        temptation to use longer sentences (as we are clearer on the content)
+        
+
+Hamish, Catherine and Laura
+
+Better
+
+	* Less is more - amount of content more appropriate for 90 seconds
+	* Flow of ideas more logical 
+	* Impact of preparation clear
+	* Better time keeping
+	* Use of analogy allows one to relate to a more familier concept
+	* More reinforcement of key ideas (...as a result of better time-keeping...?)
+
+Worse
+	* Less eye contact - watching clock instead
+	* Maybe less enthusiasm/sponteneity as the 2nd time
+
+
+Cognitive Load
+
+Fully-worked example
+*# total_length(["red", "green", "blue"]) => 12
+*def total_length(words):
+*    total = 0
+*    for word in words:
+*        total += len(word)
+*    return total
+
+
+Exercise 1
+*# word_lengths(["red", "green", "blue"]) => [3, 5, 4]
+*def word_lengths(words):
+*    lengths = ____
+*    for word in words:
+*        lengths ____
+*    return lengths
+
+Exercise 2
+*# concatenate_all(["red", "green", "blue"]) => "redgreenblue"
+*def concatenate_all(words):
+*    result = ____
+*    for ____ in ____:
+*        ____
+*    return result
+
+Exercise 3
+*# acronymize(["red", "green", "blue"]) => "RGB"
+*def acronymize(words):
+*    ____
+
+
+Saeed:
+# Create a directory with a file inside under /home directory
+wroking example
+?> cd /home
+?> mkdir dir_1
+?> cd dir_1
+?>touch file_1
+
+# now create another directory at the same location /home and create a file within it
+exercise 1
+?> cd /home
+?>---- dir_2
+?>cd dir_2
+?>touch -----
+
+Dan:
+Consider the following table Results containing some students' exam results:
+    
+Id    Name    Score
+1     Steve   83
+2     Barbara 72
+3     John    55
+4     Kelly   91
+5     Ruby    67
+
+# Get names of students scoring more than 60 but less than 80
+SELECT Name
+FROM Results
+WHERE Score > 60 AND Score < 80
+
+Exercise 1
+SELECT Name
+FROM Results
+WHERE ____ > ____ AND____ < ____
+
+# Hamish
+# Tracking changes with git: commit the following two files, newfile1.txt & newfile2.txt
+touch newfile1.txt
+touch newfile2.txt
+git _____ newfile1.txt newfile2.txt
+git commit -m ____________
+
+
+# mark
+# Testing Behaviour
+        
+class NewTest(unittest.TestCase):
+    def test_float_equals(self):
+        a = 9
+        b = float(a)
+        self.assertEqual(a, b)
+
+
+    def test_float_type_unequal(self)
+        # replace '#_____' with a proper test
+        a = 9
+        b = float(a)
+        #__________________
+
+class TestThis(unittest.TestCase):
+    # assert that `import this` is working effectively
+
+Laura:
+Having corrected all the typos in file_a.txt, you want to commit your changes. What git commands would you use?
+git status
+git _____ file_a.txt
+git _____ -m "Corrected typos"
+
+Matt Miz:
+# the pandas DataFrame class has a host of methods that can be used to manipulate data;
+# extract the species_id field from the surveys DataFrame
+species = surveys_df['species_id']
+
+# list the unique species;
+print pd.unique(species)
+
+# alternatively the same result can be obtained using a method on the DataFrame, use the help function or documentation to complete the following
+print species._____
+
+
+Catherine
+Table: Children
+ID  Firstname  Surname  Age
+1    Matilda       Johnson     14
+2    John           Mathisen    16
+3    John           Smith           13
+
+Fully-worked example
+# Query to return all children
+SELECT * FROM Children;
+
+Exercise 1
+# Query to return all children called John
+SELECT ___ FROM ____ WHERE _________ ='John';
+
+Exercise 2
+# Query to return the firstnames of the children less than 15 years old
+SELECT Firstname FROM ____ WHERE ________;
+
+Exercise 3
+# Query to return all the surnames of the children called John who are less than 15 years old
+_________________________
+
+Stephen:
+Full example
+Find the average of this set of maximum temperatures
+
+def calc_average(temps):
+    avg = 0.0
+    for t1 in temps:
+        avg += t1
+    avg /= len(temps)
+    
+temps = [12.4, 21.4, 17.3, 9..2 16.4
+
+Phase #1: Print out the list fo temperatures
+def print_temps(temps):
+    for __ in ___
+        print ___
+        
+Phase #2: Find the max temp
+def max_temp(temps):
+    max = __
+    for __ in ___
+    if _____
+        max = ____
+
+Corinne (with Loops and stuff):
+    
+Worked Example:
+# Turn the string 'hello!' into a list of letters in the word 'hello!'
+word = []
+for i in range(len('hello!')):
+    letter = 'hello'[i]
+    word.append(letter)
+    
+Exercise 1:
+    # Fill in a list of ascending numbers:
+        numbers = ________
+        for i in range(5):
+            digit = i
+            numbers________
+
+
+Pete:
+You have created and edited a new file; pitfalls.txt. You're now happy with it, so, using git commands...
+
+ 1) check the file exists.
+      $ git status 
+
+ 2) Add the file to git's staging area.
+      $ git add pitfalls.txt
+
+ 3) Add the file to version control tracking.
+      $ git ______ -m ___________________________
+
+ 4) Check the changes that you have made.
+      $ git log
+
+
+Tommaso:
+ 
+ # Compute factorials
+ 
+ def fact_lower(num)   
+	 result = 1
+ 
+	 for i in range (1, num)
+		 result *=i
+	print result   
+
+Exercise 1
+
+def fact_lower(num)   
+	 result = 1
+ 
+	 for i in range (1, num)
+		 result *=__
+	print result   
+
+
+Bill:
+########################################
+
+#
+# Shell task fade: Replace every occurance of the ":" (colon) character
+#                  with a " " (space) character within a string.
+#
+# replace "one:two:three" -> "one two three"
+#
+replace() {
+    local ARG="${1}"
+    local RESULT
+
+    RESULT=$(echo ${ARG} | "_____")
+    echo "${RESULT}"
+}
+
+
+#
+# Shell task final: Count the number of entries in your PATH environment variable.
+#
+# PATH="one:two:three"
+# count -> 3
+#
+count() {
+    local COUNT=0
+
+    for ITEM in $(echo ${PATH} | tr ':' '\n'); do
+        COUNT=$(expr ${COUNT} + 1)
+    done
+
+    echo ${COUNT}
+}
+
+########################################
+
+
+Tom
+touch planets.txt   # create empty file
+echo "Jupiter" >> planets.txt  # append one line
+git add planets.txt
+git commit -m "Add largest planet."
+
+# Add another planet and see what git status tells you about what happened
+echo "Mercury" >> planets.txt  # append one line
+___
+git add planets.txt
+___
+git commit -m "Add largest planet."
+___
+
+Reverse instructional design in action: http://swcarpentry.github.io/python-novice-gapminder/design/
+
+Homework:
+    
+•Read our operations guide
+ - https://software-carpentry.org/workshops/operations/
+ - Go through the checklists it links to
+ - Recommendations and guides embody a lotof hard-learnt lessons!
+•Then tomorrow morning…
+ - Add one question on workshop operationsto Etherpad
+•Also read
+ - https://swcarpentry.github.io/instructor-training/files/papers/wilson-lessons-learned-2016.pdf
+ - Summarises what we’ve learned over 18years
+
+Good
+ - Using mind/concept maps to think about the message you are trying to get across
+ - Fading exercises
+ - Video exercises were challenging and good
+ - Generally moving out of comfort zone
+ - Discussion around writing exercises, but not giving them as part of the course. Still valuable to do!
+ - Good to learn that MCQs can be useful
+ - Thought process for how you plan a lesson very useful
+ - Some good material that coule be put into practice more widely!
+ - Reverse Instructional Design - will be useful for things coming up
+ 
+
+Bad
+ - Should maximise the Etherpad when taking feedback!
+ - With the videoconferencing with Greg, didn't know where to speak towards
+ - LOnger time for the video recording session
+ - Less glare from lights
+ - THree streams of info: Etherpad, Greg talking, notes. Tie these together - link the presentation to the website topics
+ - Demo of Etherpad before starting - a brief tour
+ - Seems that topics flowed into each other - clearer separation of topics would be good
+ - No changing backgrounds! <- ??
+ - At start of workshop - if we needed to use machines, ensure there's enough time to prep them to be ready
+ - Send out Etherpad details beforehand, learners add in details before they arrive (or as part of registration)
+ - Would be good to have major points entered into Etherpad when Greg was talking about a concept
+ 
+ 
+Live Coding
+
+Jupyter notebook (Python, R): https://try.jupyter.org/ 
+Bash shell: https://www.tutorialspoint.com/execute_bash_online.php
+MySQL: https://www.tutorialspoint.com/mysql_terminal_online.php type use CODINGGROUND there is a table called users
+Bash shell: https://www.tutorialspoint.com/execute_bash_online.php
+Or can do live coding using a text pad as a 'dry run'
+
+Return to main room by 11:10
+
+
+Live coding feedback: Pete
+	* Go slow! Type commands in repeatedly rather than using recall, use more checkpoints to check learners are following
+	* Be careful of variable names - use lateral learning opportunities
+	* Be careful of using technical terminology
+	* Be careful of using reserved words - don't use "list" as an example string for example
+Live coding feedback: Tom
+	* Prior setup is good! Time was lost at the start of the live code example setting up the environment.
+	* Tom had a personalised and coloured terminal environment, which was distracting at first. -- However both of these things are mitigated by the sitation of the exercise, and could be acted on prior to a real run
+	* A bit too fast for those uncertain of git
+Tommaso:
+	* Great interactivity with audience
+	* Watch out for use of terminology
+	* Watch out for variable names!
+Saeed:
+	* Very well paced
+	* Good introduction to outcomes of lesson
+	* Drew attention to helpful elements of the Linux shell, for example that commands are usually abbreviations, which may help remembering the commands
+	* Be careful of variable names and learners' assumptions
+	* Adapted well to a new environment
+
+Live coding: Laura, Catherine, Simon, Hamish
+	* Prior preparation still essential (6P's pretty pink pigs prepare party potatoes)   I like the sound of party potatoes! Why, what sound do they make? http://nedroid.com/2009/05/party-cat-full-series/
+	* Forces a logical progression of material
+	* Good oportunity to show common use of manual pages
+	* Check technology is appropriate/going to work beforehand
+	* 
+
+Live coding feedback: Matt & Alan
+	* Keep to the code -- easy to get side tracked in useful, but perhaps slightly tangential aspects to the lesson (documentation)
+	* Crib sheet of the core route through the code would be in valuable (separate to the screen) and would at as a security blanket.
+	* Use whiteboard to diagramatically show the process first, and along side the code   
+	* How much background tricks and tips to cover? (command history, ctrl-R in shell) -- remember to talk through what you are doing.[this comes back to how you understand your audience -- how much prior knowledge to assume]
+	* The fact the you can go back and play with the code is a really valuable tool (add in print statements to show how things are changing)
+	* The talking, coding, talking through a particular detail/ line works really well.
+
+
+Feedback for the Sleet Squad (different today; different members):
+* This is generalized feedback covering the whole team*
+- Be careful to keep to time; it is very easy to go slow and go over time, or go fast and keep to time.
+- Keep it simple; it also very easy to include habits that seem straightforward (use of numpy, string formatting, etc) but are actually confusing and unnecessary.
+- Have a plan and make it a basic one; plan your content and delivery and make sure that you are only intending to show the basic outline of the lesson (don't make it too elaborate or interesting, because it won't work).
+- Explain your intended outcome at the start.
+- important to think about what commands you are using, easy to accidentally slip in an advanced command that would completely throw/distract novices
+
+
+Operations guide questions
+
+How do you run a multi-room workshop?
+ -- Done at Southampton, after having run single-room workshops repeatedly. Gives an opportunity to split by skill level; for instructor as well as learner.
+ -- Important to make sure there's oversight of how each room is getting on, for example to ensure enough helpers are available in each room when each room reaches an exercise.
+ -- Potentially needs more lead-in / admin time to find more instructors and helpers etc.
+
+(from Bill): How do you address the consistently struggling learner who's sinking a bit?
+ -- Don't feel you have to finish the material - if people are struggling, feel free to slow down (and don't feel bad about it as an instructor!) You can always leave out some of the more advanced topics.
+ -- Go at the pace that the room dictates.
+ -- Make use of helpers, and the high fliers within the room to help the strugglers
+ -- Make use of the data coming from the pre-workshop questionnaire
+ 
+Motivation/Demotivation exercise:
+
+Choose something you’ve done that uses one or more of the skills we teach
+•e.g.wrote a function, bulk did somestats in R, forked a repo
+Think how you would use it (maybe simplified) as an exercise or example in class
+Pair up with your neighbor and decide where this exercise fits on a 2x2 grid of“short/longtime to master” and “low/high usefulness”?
+In the Etherpad, share the task and where it fits on the 2x2 grid
+
+Saeed and Pete:
+	* The task... automation of repetitive tasks using a Rose suite
+	* Where does it fit? "Teach this first" -- once this is understood it can be re-used repeatedly to save lots of time. High return on investment.
+	* The task... introducing the IPython (jupyter) notebook
+	* Where does it fit? "Teach this first" -- The notebook system is portable, easy to pick up, and valuable as a mechanism
+
+Bill:
+[shell] The task is to automatically follow the logged output, as it happens, of a HPC qsub job
+	* Usefulness: A focused specific example, however a simple script pulling together a few shell commands to highlight the convenience and power of joined up shell scripting
+	* Mastery: Covers a few core concepts and commands
+		* qstat, grep, cut, tr, tail and piping "|"
+	* Usefulness = mid/high, Mastery = mid ??? very specific for a targeted audiance
+
+Dan:
+[shell] 
+	* script to modify current directory to another very similar one to easily switch between them
+	* quick to master/Low usefulness
+Corinne:
+    [python function]
+	* takes input of two arrays (one array of increasing model sizes, another array of times they took to run), plots the correlation on a graph
+	* quick to master, high usefulness (probably)
+
+Hamish:
+    [shell] Search recursively for all .git repos and execute git pull
+	    
+				+-----------+---------+
+				 |                |    *        |
+Usefullness   +-----------+---------+
+				 |                |              |
+				+-----------+---------+
+						Time
+	
+	
+Laura:
+    Task: Use grep to find every file in a repo that includes the use of a specific variable
+    Position: Quick to master/Medium useful?
+
+
+
+Tom
+use version control for thesis: ability to delete things without loosing them, no commented sections
+time/usefulness: on diagonal, medium time effort medium benefit
+` 
+Tommaso 
+Feeding output from complex low-level code into matlab scripts for data processing
+Streamlined production of plots and tables directly going into .tex files and documentation. 
+
+Excellent for scientific quality control
+
+Quickish to master
+
+Matt:
+Rather than explain most useful methods/attributes of a specific python object, demonstrate how to explore properties and methods of an object: [dir, getattr[
+    
+    
+    
+    
+Motivational stories
+
+SQL course - was a little dry until anecdotes about SQL injection. This created a huge aside to the course but it made clear why you need to be careful how to code. May not actually have been an SQL course???
+
+Another course here, something about corrilis forces. Intructor brought in his homemade turntable model.
+ 
+ 
+Pete and Saeed:
+    Saeed - the PRECIS introductory course, where the trainer was really motivated about the content and really grabbed the attention and enthusiasm of the attendees.
+    Pete - General Relativity is arguably one of the most complex elements of modern physics, but my lecturer brought the concepts to our level and taught it with a lot of enthusiasm, which really helped our motivation to attend lectures and try hard at the course.
+ 
+ 
+ In a physics lecture, my lecturer brought in a microwave and took out the spinny plate, then he microwaved a piece of plastic cheese (not actual plastic) so we could see the unmicrowaved stripes on it.  That was exciting.
+
+Best courses were the ones where very complex material was made accessible starting from examples. 
+Having the example in the back of your mind while working through complicated material keeps motivation high.
+
+Course on tipping points in the climate system brought to life when the lecturer started throwing his chair around to demonstrate the "tipping", highlighted the permanency of it.
+
+
+Blooms Taxonomy
+
+	1. Knowledge: recalling learned information (name, define, recall) - 0
+	1. Comprehension: explaining the meaning of information (restate, locate, explain, recognize) - 2
+	1. Application: applying what one knows to novel, concrete situations (apply, demonstrate, use) - 12
+	1. Analysis: breaking down a whole into its component parts and explaining how each part contributes to the whole (differentiate, criticize, compare) - 2
+	1. Synthesis: assembling components to form a new and integrated whole (design, construct, organize) - 1
+	1. Evaluation: using evidence to make judgments about the relative merits of ideas and materials (choose, rate, select) - 0
+
+Compare with "Big Five" personality traits: https://en.wikipedia.org/wiki/Big_Five_personality_traits
+
+What's an example of something you have done recently that was at the analysis, synthesis, or evaluation level?
+
+
+Bill: Scientific Software Stack design (Seconded! -- Pete)
+Corinne: Working out which nearest neighbour interpolation scheme is best to regrid cubes (which are funny shapes) and thinking about how each scheme works and how long it takes (and why)
+Hamish: Write python library for analysing phenology data based on collection of functions
+Simon    Decide how to design moderately large piece of code
+Steve.  Develop a training session - choosing the best method(s) - 6 -  
+Deborah
+6. Choose a teaching method for a new lesson.
+Saeed: 4) review an academic paper and provide feedback
+Tommaso
+5. Writing a Results section of a scientific paper
+6. Decide which path to take when scrambling up a mountain without a map
+Stephen: 4/5 Testing the results of restarting the ocean model
+Catherine:wrote a paper
+Laura: explaining a process by breaking it down into tasks and then explaining how they fit together
+
+Matt: Analyisis: Understanding the structure of the CMIP6 data request and how to navigate between the 17 python classes linking individual output variables to the experiments being requested.
+
+
+Tom
+Evaluation: selecting the next book to read based on reviews
+
+Alan: 6. Paper - being able to quantify model uncertainty
+
+Dan: Understanding how data regridding algorithms work in SciPy
+
+Live coding: https://www.livecoding.tv/
+facilitating lateral knowledge transfer
+
+Our audience: http://software-carpentry.org/audience/
+Please read and then say 'done' in the chat area (lower right) of the Etherpad
+ 
+Please include the names of the persona's creators
+and give the persona a name as well
+
+Tom, Hamish, Catherine, Laura
+Fred Fitzroy
+	* Met Office scientist
+	* Fed up: many years of experience with legacy code, and legacy languages they had to learn now having to learn yet another new language
+	* regularly has to fix and adapt scripts they wrote, or others wrote (maybe having to "translate" scripts from an old language to a new one)
+	*  Desperate for a decent cup of tea
+	* feel they aren't paid enough in line with their skills they've learnt over their career - only doing the course in order to advance progression chances next year
+	* Doesn't use an IDE as he thinks it's something created by a dyslexic terrorist (tirrorets?)
+	* Plays badminton on Tuesday evenings at Cranbrook Education Campus, though  the numbers are dwindling signficantly and he may soon need to find an alternative club to join. He feels it is being taken over by the chess club. Even the ones who aren't very good even though they think they are and are so financially flush as to bribe the other players to lose. He thinks it might be the influence of Cranbrook itself, where badminton is seen as a passing fad by jealous people skilled at something even more outdated than his own coding language. Like ping pong.
+	* software carpentry will help Fred to organise their own code using version control and to share it
+	* he wil also learn how low to take preemptive measures to lower the burden on its future self, using defensive programming or testing
+	* Fred will also delighted by the descriptive variable and function names, and will spend more time thinking about naming variables, functions, files, ...
+
+Dan, Corinne and Tommaso
+Fatima Fogg
+	* Atmospheric Scientist.
+	* Knowledge of programming in C.
+	* Task:
+		* She has lots of raw output from parallel runs of a model she didn't write..
+		* Fatima needs to process this into a form she can analyze in a reasonable amount of time.
+	* Her new manager has a chronic personality disorder which prevents him being able to talk to other people in a non-aggressive tone.
+	* Plays chess - which she is now awesome at. In fact, she has won many amateur championships and may soon turn professional. Her success has caused much bitterness among members of the badminton club, who are rubbish - on Tuesday evenings at Cranbrook Education Campus. They are attracting members from the poorly managed badminton club.
+	* Her dyslexic son used to work for JetBrains, before becoming radicalised and joining IS.
+
+Bill, Saeed and Pete
+
+Ladies and gentlemen, we'd like you to meet...
+Damien Disgruntled
+
+ * Damien has just been told he must go on the Python software training course.
+ * Damien is under a lot of pressure. He has a lot going on in his work.
+ * People in his department are measured on the number of journal articles they publish. He is overdue a paper to Nature and has three others waiting review in his inbox.
+ * Damien needs more time to do his science, not this computer science malarkey. And yet, his manager has told him she'll read him the riot act unless he attends the course. Damien doesn't have time for a Python course.
+ * Secretly, Damien was never good with Maths. He was pushed into this career and stayed on it with sheer bloody-mindedness.
+ * On top of that, he's an IDL programmer. He thinks IDL is OK, really, and doesn't understand why he needs to move to Python. Why change what works?
+ * He's put a lot of effort into making himself proficient with IDL. Damien is proud of his self-taught IDL proficiency. He's seen a lot of languages come and go, and reckons Python is another one of them. It's just a passing fad.
+ * On top of this, he has many bespoke procedures that are, he reckons, tried and tested as they've had years of mileage, and he's very attached to them. But he hasn't written a unit test in his life.
+ * In fact, he's become the point of knowledge in his team on IDL. He's the go-to IDL guy. He's also heard that Python is an interpreted language, and that makes it slow; it doesn't measure up against IDL and Fortran, surely? Damien needs results, now.
+ * Damien is also a ping pong wizard. He's not really a fan of this badminton thing either - just another passing fad.
+ * Software carpentry will help Damien overcome his concern of the unknown and show him how much time some well crafted code can save him.
+
+
+Matt, Mark, Alan, Stephen
+Kevin Chemistry 22
+	* 1st year post grad
+	* On a 3yr project
+	* Atmos chemistry/physics background and focus: working on UK chemistry/aerosol scheme
+	* Getting a PhD is their principle aim
+	* Neet to pitch to them why software engineering can help, them do more and/or do it quicker - especially version control, so that we can think about putting developments back into code base
+	* Working environment is not encouraging them to follow good coding practices - not in interests of post-docs to work on version control and modularisation when they are judged on papers
+	* Can we encourage them to act as a beacon, i.e. can they (publically) demonstrate what they've done to their peers/department
+	* Additionally, it can be difficult to get code back when it is version 6 when we are version 10.6
+
+Best starting point for Igor Steinmacher's work on newcomer participation in open source: http://www.igor.pro.br/publica/papers/IST_SysReview_PrePrint.pdf
+
+Sleet Squad Feedback: (Corinne, Bill, Dan and Stephen)
+	* Good to state the reasons why the skills you are teaching are better than what the students already use
+	* Good to use concrete examples of use cases and explain why skills being taught will improve the outcome/process of these use cases
+	* Personal experience can help connect with audience and demonstrate real-world reasons for teaching the skills
+
+
+Tom, Tommaso, Saeed, Pete
+	* We thought a lot about what the hooks we can put into our introductions - how can we provide "carrots" to displace the "sticks" that the Damiens and Kevins might be reaching us with?
+	* We found that my intro missed this and everyone else then paid attention to how that could be improved in their introductions.
+
+Round the room feedback
+
+Good
+ - Really enjoyed live coding - good to get some honest feedback
+ - Really enjoyed Bloom's Taxonomy discussion and mentoring/teaching
+ - Really enjoyed Greg joining us via Google Hangout
+ - Impressed with the checkout procedure for instructor training - good to have a sense of what happens next. There's a nice step here to say you've done something. Reward for doing it!
+ - Networking aspect with people working in different parts of the organisation, facing similar issues e.g. live coding sessions. Second one discussed challenged within organisations
+ - Really enjoyed thinking about personas, commonalities between some of them
+ - Focus on how to get through to people you are trying to teach
+ - Discussing how to motivate people to join the course, how it would benefit them as well as us
+ - Great participation from the soon-to-be instructor trainers
+
+Bad
+ - Motivating people on a Friday afternoon at 4pm is a challenge
+ - Live Coding not a real substitute for doing it in a workshop
+ - Not quite sure whether we were using the red/post-its - problems with Etherpad!
+ - Lost a bit of traction and momentum - longer group sessions perhaps? Definitely felt tighter feedback loops yesterday
+ - Enjoyed Greg's involvement was slightly disrupted by background sound
+ - Would have been helpful to see the changed schedule (as it was changing) e.g. in the Etherpad
+ - Mentioned that the course should end on a high :) We finished on a negative point. This one :) [Fixed: Steve gave positive point at the end!]
